@@ -20,7 +20,7 @@ export function uiReducer( state = initState, acction: fromUI.acciones): State {
                 isLoading: false
             };
         default:
-            break;
+            return state;
     }
 }
 

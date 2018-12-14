@@ -1,8 +1,9 @@
-import { AuthService } from './../auth.service';
-import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../app.reducer';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+
+import { AuthService } from './../auth.service';
+import { AppState } from '../../app.reducer';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { Subscription } from 'rxjs';
 export class LoginComponent implements OnInit, OnDestroy {
 
   cargando: boolean;
-  subcription: Subscription;
+  subcription: Subscription = new Subscription();
 
   constructor( public authService: AuthService,
                private store: Store<AppState> ) { }
