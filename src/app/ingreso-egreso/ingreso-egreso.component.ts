@@ -8,6 +8,8 @@ import { IngresoEgresoService } from './ingreso-egreso.service';
 import Swal from 'sweetalert2';
 import { ActivarLoadingAcction, DesactivarLoadingAcction } from '../shared/ui.acctions';
 
+import * as fromIngEgr from '../ingreso-egreso/ingreso-egreso.reducer';
+
 @Component({
   selector: 'app-ingreso-egreso',
   templateUrl: './ingreso-egreso.component.html',
@@ -22,7 +24,7 @@ export class IngresoEgresoComponent implements OnInit, OnDestroy {
   cargando: boolean;
 
   constructor(public ingresoEgresoService: IngresoEgresoService,
-              private store: Store<AppState> ) { }
+              private store: Store<fromIngEgr.AppState> ) { }
 
   ngOnInit() {
     this.loadingSub = this.store.select('ui')

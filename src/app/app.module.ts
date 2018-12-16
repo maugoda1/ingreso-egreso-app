@@ -8,52 +8,60 @@ import { appReducers } from './app.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // manejo de formularios
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { ReactiveFormsModule } from '@angular/forms';
 
 // chart
-import { ChartsModule } from 'ng2-charts';
+// import { ChartsModule } from 'ng2-charts';
 
 // base de datos
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+// import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 // componentes
 import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { IngresoEgresoComponent } from './ingreso-egreso/ingreso-egreso.component';
-import { EstadisticaComponent } from './ingreso-egreso/estadistica/estadistica.component';
-import { DetalleComponent } from './ingreso-egreso/detalle/detalle.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { OrdenIngresoEgresoPipe } from './ingreso-egreso/orden-ingreso-egreso.pipe';
+// import { LoginComponent } from './auth/login/login.component';
+// import { RegisterComponent } from './auth/register/register.component';
+// import { DashboardComponent } from './dashboard/dashboard.component';
+// import { IngresoEgresoComponent } from './ingreso-egreso/ingreso-egreso.component';
+// import { EstadisticaComponent } from './ingreso-egreso/estadistica/estadistica.component';
+// import { DetalleComponent } from './ingreso-egreso/detalle/detalle.component';
+// import { FooterComponent } from './shared/footer/footer.component';
+// import { NavbarComponent } from './shared/navbar/navbar.component';
+// import { SidebarComponent } from './shared/sidebar/sidebar.component';
+// import { OrdenIngresoEgresoPipe } from './ingreso-egreso/orden-ingreso-egreso.pipe';
+
+// Modulos personalizados
+import { AuthModule } from './auth/auth.module';
+// import { SharedModule } from './shared/shared.module';
+// import { IngresoEgresoModule } from './ingreso-egreso/ingreso-egreso.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    DashboardComponent,
-    IngresoEgresoComponent,
-    EstadisticaComponent,
-    DetalleComponent,
-    FooterComponent,
-    NavbarComponent,
-    SidebarComponent,
-    OrdenIngresoEgresoPipe
+    // LoginComponent,
+    // RegisterComponent,
+    // DashboardComponent,
+    // IngresoEgresoComponent,
+    // EstadisticaComponent,
+    // DetalleComponent,
+    // FooterComponent,
+    // NavbarComponent,
+    // SidebarComponent,
+    // OrdenIngresoEgresoPipe
   ],
   imports: [
     BrowserModule,
+    AuthModule,
+    // SharedModule,
     AppRoutingModule,
-    FormsModule,
-    ChartsModule,
-    ReactiveFormsModule,
+    // IngresoEgresoModule,
+    // FormsModule,
+    // ChartsModule,
+    // ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    // AngularFirestoreModule,
     AngularFireAuthModule,
     StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
